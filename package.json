@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "publisher": "doug",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/dschaefer/aliens-vscode"
+  },
   "engines": {
     "vscode": "^1.25.0"
   },
@@ -25,7 +28,9 @@
     "watch": "npm-run-all -p watch:*",
     "watch:extension": "tsc --watch",
     "watch:views": "webpack --watch --mode development",
-    "postinstall": "node ./node_modules/vscode/bin/install"
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "vscode:prepublish": "yarn compile",
+    "package": "vsce package"
   },
   "dependencies": {
     "mobx": "^5.0.3",
@@ -47,6 +52,7 @@
     "ts-import-plugin": "^1.5.4",
     "ts-loader": "^4.4.2",
     "typescript": "^2.9.2",
+    "vsce": "^1.47.0",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8"
   }
